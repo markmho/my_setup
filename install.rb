@@ -22,7 +22,7 @@ zsh.provision
 zsh.make_default
 zsh.add_path('/usr/local/share/python')
 zsh.add_path('$HOME/.rbenv/bin')
-# zsh.add_path('/Applications/Postgres93.app/Contents/MacOS/bin')
+# zsh.add_path('PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"')
 zsh.alias('avro-tools', jar.latest_version_cmd('avro-tools'))
 ## zsh.export('JAVA_OPTS', '-Xms256M -Xmx512M -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+DoEscapeAnalysis -XX:+UseBiasedLocking -XX:PermSize=64M -XX:MaxPermSize=256M'
 zsh.export('SBT_OPTS', '-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M')
