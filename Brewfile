@@ -13,8 +13,9 @@ link --force openssl
 
 # Useful dev utilities
 install git
-install jq
+install grep
 install htop-osx
+install jq
 install phantomjs
 install tmux
 install vim
