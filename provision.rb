@@ -19,6 +19,12 @@ brew.tap('caskroom/cask')
 brew.tap('caskroom/versions')
 brew.tap('homebrew/dupes')
 
+# Update formulas
+brew.update
+
+# Upgrade existing packages
+brew.upgrade
+
 # Common dependencies
 brew.install 'imagemagick'
 brew.install 'gcc' # contains gfortran, which is required for SciPy, R
@@ -99,3 +105,6 @@ brew.cask_install 'smcfancontrol'
 brew.cask_install 'sourcetree'
 brew.cask_install 'vlc'
 brew.cask_install 'wechat'
+
+# Remove old versions
+brew.cleanup

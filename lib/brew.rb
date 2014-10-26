@@ -5,19 +5,25 @@ class Brew
 
   def provision
     if File.exist?('/usr/local/bin/brew')
-      puts "Already installed: homebrew"
+      puts 'Already installed: homebrew'
     else
-      puts "Installing homebrew..."
+      puts 'Installing homebrew...'
       system %Q{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
     end
   end
 
   def cleanup
-    system("brew cleanup")
+    system('brew cleanup')
+  end
+
+  def update
+    puts 'Updating homebrew formulas'
+    system('brew update')
   end
 
   def upgrade
-    system("brew upgrade")
+    puts 'Updating homebrew-installed packages'
+    system('brew upgrade')
   end
 
   @existing_taps = nil

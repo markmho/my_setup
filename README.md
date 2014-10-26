@@ -14,7 +14,7 @@ Feel free to fork this and modify to your heart's content
 ```bash
 git clone git@github.com/ktham/my_setup.git ~/my_setup
 cd my_setup
-ruby install.rb
+ruby provision.rb
 ```
 
 ## License
