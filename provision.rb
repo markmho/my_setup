@@ -1,6 +1,7 @@
 require_relative 'lib/brew'
 require_relative 'lib/file_util'
 require_relative 'lib/jar'
+require_relative 'lib/npm'
 require_relative 'lib/rbenv'
 require_relative 'lib/zsh'
 
@@ -53,6 +54,7 @@ rbenv.global('2.1.3')
 
 # Node
 brew.install 'node'
+npm.install 'bower'
 
 # Java & Scala
 brew.cask_install 'java' # Installs the latest jdk (e.g. '8u25-b17')
