@@ -15,9 +15,10 @@ file_util = FileUtil.instance
 brew.provision
 
 # Homebrew taps
-brew.tap('caskroom/cask')
-brew.tap('caskroom/versions')
-brew.tap('homebrew/dupes')
+brew.tap 'caskroom/cask'
+brew.tap 'caskroom/versions'
+brew.tap 'homebrew/dupes'
+brew.tap 'homebrew/science'
 
 # Update formulas
 brew.update
@@ -41,6 +42,7 @@ brew.install 'vim' # text editor
 
 # Python
 brew.install 'python'
+system 'pip install -r pip_requirements.txt'
 
 # Ruby
 brew.install 'rbenv' # ruby version manager
@@ -59,13 +61,16 @@ brew.install 'sbt'
 
 # R
 # brew.install 'r'
+# I've opted to try out Revolution R Open which integrates Intel's BLAS libraries (http://mran.revolutionanalytics.com/download/#download)
 
-R_BREW_INSTALLATION = "/usr/local/opt/r/R.framework"
-if File.exist?(R_BREW_INSTALLATION) && !File.symlink?(R_BREW_INSTALLATION, "/Library/Frameworks")
-  puts "Found R Installation."
-  puts "Symlinking '#{R_BREW_INSTALLATION}' to '/Library/Frameworks'"
-  File.symlink(R_BREW_INSTALLATION, "/Library/Frameworks")  
-end
+# R_BREW_INSTALLATION = "/usr/local/opt/r/R.framework"
+# if File.exist?(R_BREW_INSTALLATION) && !File.symlink?(R_BREW_INSTALLATION, "/Library/Frameworks")
+#   puts "Found R Installation."
+#   puts "Symlinking '#{R_BREW_INSTALLATION}' to '/Library/Frameworks'"
+#   File.symlink(R_BREW_INSTALLATION, "/Library/Frameworks")  
+# end
+
+brew.cask_install 'rstudio'
 
 # Useful Jars
 jar.download('http://archive.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7.7.jar')
@@ -74,19 +79,9 @@ jar.download('http://archive.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7
 file_util.symlink('dotfiles/.vimrc', '~/.vimrc')
 file_util.symlink('dotfiles/.zshrc', '~/.zshrc')
 
+# Zsh
 zsh.provision
 zsh.make_default
-# zsh.add_path('/usr/local/share/python')
-# zsh.add_path("#{ENV['HOME']}/.rbenv/bin")
-# zsh.add_path("#{ENV['HOME']}/my_setup/bin")
-# # zsh.add_path('/Applications/Postgres93.app/Contents/MacOS/bin')
-# zsh.alias('avro-tools', jar.latest_version_cmd('avro-tools'))
-# ## zsh.export('JAVA_OPTS', '-Xms256M -Xmx512M -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+DoEscapeAnalysis -XX:+UseBiasedLocking -XX:PermSize=64M -XX:MaxPermSize=256M'
-# zsh.export('SBT_OPTS', '-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M')
-# zsh.export_cmd('JAVA_HOME', '/usr/libexec/java_home')
-# zsh.rcfile_include(rbenv.zsh_init_cmd)
-
-system "pip install -r pip_requirements.txt"
 
 brew.cask_install 'android-file-transfer'
 brew.cask_install 'caffeine'
@@ -99,7 +94,7 @@ brew.cask_install 'google-hangouts'
 brew.cask_install 'intellij-idea'
 brew.cask_install 'iterm2'
 brew.cask_install 'flux'
-# brew.cask_install 'rubymine'
+brew.cask_install 'rubymine'
 brew.cask_install 'screenhero'
 brew.cask_install 'skype'
 brew.cask_install 'smcfancontrol'
