@@ -25,7 +25,7 @@ class Zsh
 
   def rcfile_include(line)
     line = line.strip
-    line_exists = File.open(ZSHRC_FILE).each_line.any? { |l| l.include?(line) }
+    line_exists = File.exist?(ZSHRC_FILE) && File.open(ZSHRC_FILE).each_line.any? { |l| l.include?(line) }
     File.open(ZSHRC_FILE, 'a') { |f| f.puts line } unless line_exists
   end
 

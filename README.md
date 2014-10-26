@@ -1,14 +1,13 @@
 # my_setup
 
-This is my development environment scripted in Ruby.
+This is my development environment scripted in Ruby 2.0+.
 This project here is just a courtesy for fellow devs and only works on a Mac.
 Feel free to fork this and modify to your heart's content
 
 ## Prerequisites
-
-* Git (Can install from: `xcode-select --install`)
-* Ruby 2.0.0 or higher (Should have already came with OS X Mavericks)
-* [XQuartz](https://xquartz.macosforge.org/) - for installing R
+* Installing Mac OS X command line tools `xcode-select --install`
+* Ruby 2.0.0 or higher (Should have already came with OS X Mavericks or higher)
+* [XQuartz](https://xquartz.macosforge.org/) - for installing X11 programs like R
 
 ## Installation
 
