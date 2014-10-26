@@ -6,7 +6,7 @@ class Zsh
   ZSHRC_FILE = File.join(ENV['HOME'], ".zshrc")
 
   def provision
-    if File.exist?(ZSHRC_FILE)
+    if File.exist?(ZSHRC_FILE) || File.symlink?(ZSHRC_FILE)
       puts "Already installed: oh-my-zsh"
     else
       puts "Installing: oh-my-zsh"
