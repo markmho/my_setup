@@ -5,10 +5,14 @@ class Rbenv
 
   def install(version)
     if `rbenv versions | grep #{version}`.empty?
-      puts "installing ruby #{version}"
-      system "rbenv install #{version}"
+      puts "Installing: ruby #{version}"
+      if system "rbenv install #{version}"
+        puts "Installed: ruby #{version}"
+      else
+        puts "Error Installing: ruby #{version}"
+      end
     else
-      puts "found ruby #{version} installation"
+      puts "Already installed: ruby #{version}"
     end
   end
 

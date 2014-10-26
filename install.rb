@@ -1,13 +1,15 @@
-require_relative 'support/brew'
-require_relative 'support/jar'
-require_relative 'support/rbenv'
-require_relative 'support/zsh'
+require_relative 'lib/brew'
+require_relative 'lib/file_util'
+require_relative 'lib/jar'
+require_relative 'lib/rbenv'
+require_relative 'lib/zsh'
 
 # singleton support objects
 brew = Brew.instance
 jar = Jar.instance
 rbenv = Rbenv.instance
 zsh = Zsh.instance
+file_util = FileUtil.instance
 
 # Install Homebrew
 brew.provision
@@ -61,6 +63,9 @@ end
 
 # Useful Jars
 jar.download('http://archive.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7.7.jar')
+
+# Dotfiles
+file_util.copy('dotfiles/.vimrc', '~/.vimrc')
 
 zsh.provision
 zsh.make_default

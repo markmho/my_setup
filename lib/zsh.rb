@@ -7,18 +7,18 @@ class Zsh
 
   def provision
     if File.exist?(ZSHRC_FILE)
-      puts "found oh-my-zsh installation"
+      puts "Already installed: oh-my-zsh"
     else
-      puts "installing oh-my-zsh"
+      puts "Installing: oh-my-zsh"
       system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
     end
   end
 
   def make_default
     if ENV["SHELL"] =~ /zsh/
-      puts "already using zsh"
+      puts "Already default shell: zsh"
     else
-      puts "switching to zsh"
+      puts "Setting default shell: zsh"
       system %Q{chsh -s `which zsh`}
     end
   end

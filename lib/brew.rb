@@ -5,9 +5,9 @@ class Brew
 
   def provision
     if File.exist?('/usr/local/bin/brew')
-      puts "found homebrew installation"
+      puts "Already installed: homebrew"
     else
-      puts "installing homebrew"
+      puts "Installing homebrew..."
       system %Q{ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"}
     end
   end

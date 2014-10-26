@@ -9,9 +9,9 @@ class Jar
     jar_filename = url.split("/").last
     jar_file = File.join(JAR_DIRECTORY, jar_filename)
     if File.exists?(jar_file)
-      puts "found #{jar_filename} at #{jar_file}"
+      puts "Already installed (jar): #{jar_filename} at #{jar_file} "
     else
-      puts "downloading #{jar_filename} to #{jar_file}"
+      puts "Downloading (jar): #{jar_filename} to #{jar_file} "
       system "curl -o #{jar_file} #{url}"
     end
   end
