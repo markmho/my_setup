@@ -22,4 +22,5 @@ export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:Max
 alias avro-tools="java -jar ~/my_setup/jars/$(ls ~/my_setup/jars | grep avro-tools | sort | tail -n 1)"
 
 # Postgresapp
-export PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
+# Note: Install from: http://postgresapp.com/
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
