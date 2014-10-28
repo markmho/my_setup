@@ -88,7 +88,7 @@ zsh.make_default
 brew.cask_install 'android-file-transfer'
 brew.cask_install 'caffeine'
 brew.cask_install 'dropbox'
-brew.cask_install 'eloquent'
+# brew.cask_install 'eloquent'
 brew.cask_install 'firefox'
 brew.cask_install 'google-chrome'
 brew.cask_install 'google-drive'
@@ -102,7 +102,7 @@ brew.cask_install 'skype'
 brew.cask_install 'smcfancontrol'
 brew.cask_install 'sourcetree'
 brew.cask_install 'vlc'
-brew.cask_install 'wechat'
+# brew.cask_install 'wechat'
 
 # Remove old versions
 brew.cleanup
