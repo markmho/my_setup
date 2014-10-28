@@ -62,7 +62,7 @@ brew.install 'scala'
 brew.install 'sbt'
 
 # R
-# brew.install 'r'
+brew.install 'r'
 # I've opted to try out Revolution R Open which integrates Intel's BLAS libraries (http://mran.revolutionanalytics.com/download/#download)
 
 # R_BREW_INSTALLATION = "/usr/local/opt/r/R.framework"
