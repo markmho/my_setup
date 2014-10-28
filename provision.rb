@@ -8,6 +8,7 @@ require_relative 'lib/zsh'
 # singleton support objects
 brew = Brew.instance
 jar = Jar.instance
+npm = Npm.instance
 rbenv = Rbenv.instance
 zsh = Zsh.instance
 file_util = FileUtil.instance
