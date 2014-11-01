@@ -1,17 +1,12 @@
-require_relative 'lib/brew'
-require_relative 'lib/file_util'
-require_relative 'lib/jar'
-require_relative 'lib/npm'
-require_relative 'lib/rbenv'
-require_relative 'lib/zsh'
+require_relative 'lib/all'
 
-# singleton support objects
+# assign singleton support objects to local variables
 brew = Brew.instance
+file_util = FileUtil.instance
 jar = Jar.instance
 npm = Npm.instance
 rbenv = Rbenv.instance
 zsh = Zsh.instance
-file_util = FileUtil.instance
 
 # Install Homebrew
 brew.provision
@@ -64,23 +59,13 @@ brew.install 'sbt'
 
 # R
 brew.install 'r'
-# I've opted to try out Revolution R Open which integrates Intel's BLAS libraries (http://mran.revolutionanalytics.com/download/#download)
-
-# R_BREW_INSTALLATION = "/usr/local/opt/r/R.framework"
+brew.cask_install 'rstudio'
+# R_BREW_INSTALLATION = '/usr/local/opt/r/R.framework'
 # if File.exist?(R_BREW_INSTALLATION) && !File.symlink?(R_BREW_INSTALLATION, "/Library/Frameworks")
 #   puts "Found R Installation."
 #   puts "Symlinking '#{R_BREW_INSTALLATION}' to '/Library/Frameworks'"
 #   File.symlink(R_BREW_INSTALLATION, "/Library/Frameworks")  
 # end
-
-brew.cask_install 'rstudio'
-
-# Useful Jars
-jar.download('http://archive.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7.7.jar')
-
-# Dotfiles
-file_util.symlink('dotfiles/.vimrc', '~/.vimrc')
-file_util.symlink('dotfiles/.zshrc', '~/.zshrc')
 
 # Zsh
 zsh.provision
@@ -107,3 +92,10 @@ brew.cask_install 'vlc'
 
 # Remove old versions
 brew.cleanup
+
+# Dotfiles
+file_util.symlink('dotfiles/.vimrc', '~/.vimrc')
+file_util.symlink('dotfiles/.zshrc', '~/.zshrc')
+
+# Useful Jars
+jar.download('http://archive.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7.7.jar')
