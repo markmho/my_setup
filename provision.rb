@@ -23,6 +23,9 @@ brew.update
 # Upgrade existing packages
 brew.upgrade
 
+#
+# brew install caskroom/cask/brew-cask
+
 # Common dependencies
 brew.install 'imagemagick'
 brew.install 'gcc' # contains gfortran, which is required for SciPy, R
@@ -45,8 +48,8 @@ system 'pip install -r pip_requirements.txt'
 brew.install 'rbenv' # ruby version manager
 brew.install 'ruby-build' # ruby installer/builder
 brew.install 'rbenv-gem-rehash' # automatic put gems onto PATH
-rbenv.install('2.1.3')
-rbenv.global('2.1.3')
+rbenv.install('2.2.0')
+rbenv.global('2.2.0')
 
 # Node
 brew.install 'node'
@@ -58,6 +61,7 @@ brew.install 'scala'
 brew.install 'sbt'
 
 # R
+# brew install Caskroom/cask/xquartz
 brew.install 'r'
 brew.cask_install 'rstudio'
 # R_BREW_INSTALLATION = '/usr/local/opt/r/R.framework'
@@ -71,23 +75,21 @@ brew.cask_install 'rstudio'
 zsh.provision
 zsh.make_default
 
-# brew.cask_install 'android-file-transfer'
-brew.cask_install 'caffeine'
-# brew.cask_install 'dropbox'
+# brew.cask_install 'caffeine'
 # brew.cask_install 'eloquent'
-brew.cask_install 'firefox'
-brew.cask_install 'google-chrome'
+# brew.cask_install 'firefox'
+# brew.cask_install 'google-chrome'
 # brew.cask_install 'google-drive'
 # brew.cask_install 'google-hangouts'
 # brew.cask_install 'intellij-idea'
-brew.cask_install 'iterm2'
-brew.cask_install 'flux'
+# brew.cask_install 'iterm2'
+# brew.cask_install 'flux'
 # brew.cask_install 'rubymine'
-brew.cask_install 'screenhero'
+# brew.cask_install 'screenhero'
 # brew.cask_install 'skype'
 # brew.cask_install 'smcfancontrol'
 brew.cask_install 'sourcetree'
-brew.cask_install 'vlc'
+# brew.cask_install 'vlc'
 # brew.cask_install 'wechat'
 
 # Remove old versions
